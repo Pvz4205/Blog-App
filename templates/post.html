@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2><a href="#">{{ data.title }}</a></h2>
+										<p>{{ data.subtitle }}</p>
+									</div>
+									<div class="meta">
+										<time class="published" datetime="2015-11-01">{{ data.date }}</time>
+										<a href="#" class="author"><span class="name">{{ data.author }}</span><img src="{{url_for('static', filename = 'images/avatar.jpg')}}" alt="" /></a>
+									</div>
+								</header>
+								<span class="image featured"><img src="{{ data.image }}" alt="" /></span>
+								<p>{{ data.content1 }}</p>
+								<p>{{ data.content2 }}</p>
+								<footer>
+									<ul class="stats">
+										<li><a href="#">General</a></li>
+										<li><a href="#" class="icon solid fa-heart">28</a></li>
+										<li><a href="#" class="icon solid fa-comment">128</a></li>
+									</ul>
+								</footer>
+							</article>
+{% endblock %}
