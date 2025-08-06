@@ -2,6 +2,7 @@ from flask import Flask, render_template, url_for, request, session, redirect, f
 import datetime
 import json
 import math
+import os
 from flask_login import LoginManager, UserMixin, login_user, logout_user, current_user, login_required
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import Column, Integer, String
@@ -160,4 +161,5 @@ def signup():
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
-    app.run()
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
